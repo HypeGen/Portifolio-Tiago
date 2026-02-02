@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -9,6 +9,7 @@ import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import AdminPanel from "./pages/AdminPanel";
+import { initErrorTracking } from "./monitoring";
 
 // Main Portfolio Page
 const Home = () => {
@@ -29,6 +30,10 @@ const Home = () => {
 };
 
 function App() {
+  useEffect(() => {
+    initErrorTracking();
+  }, []);
+
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL || "/"}>
       <Routes>

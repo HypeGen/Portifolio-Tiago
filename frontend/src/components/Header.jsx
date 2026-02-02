@@ -47,9 +47,12 @@ const Header = () => {
               e.preventDefault();
               scrollToSection('#home');
             }}
-            className="font-display font-bold text-2xl text-white hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
           >
-            TSG<span className="text-gray-500">.</span>
+            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-white to-gray-300 flex items-center justify-center shadow-lg">
+              <span className="font-display font-black text-lg text-[#0a0a0a]">TS</span>
+            </div>
+            <span className="font-display font-bold text-xl text-white">TSG<span className="text-gray-500">.</span></span>
           </a>
 
           {/* Desktop Navigation */}
