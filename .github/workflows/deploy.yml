@@ -3,8 +3,6 @@ name: Deploy Frontend to GitHub Pages
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   build:
@@ -24,7 +22,7 @@ jobs:
 
     - name: Install dependencies
       working-directory: ./frontend
-      run: npm install
+      run: npm install --legacy-peer-deps
 
     - name: Build
       working-directory: ./frontend
@@ -37,4 +35,3 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./frontend/build
-        cname: seu-dominio.com  # Altere se tiver domínio próprio
