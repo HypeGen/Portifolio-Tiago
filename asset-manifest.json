@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Portifolio-Tiago/static/css/main.9d53311f.css",
+    "main.js": "/Portifolio-Tiago/static/js/main.8ccf316b.js",
+    "index.html": "/Portifolio-Tiago/index.html",
+    "main.9d53311f.css.map": "/Portifolio-Tiago/static/css/main.9d53311f.css.map",
+    "main.8ccf316b.js.map": "/Portifolio-Tiago/static/js/main.8ccf316b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9d53311f.css",
+    "static/js/main.8ccf316b.js"
+  ]
+}
