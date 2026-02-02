@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { personalInfo } from '../data/mock';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -69,13 +70,11 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
+          {/* CTA Button (abre WhatsApp) */}
           <a
-            href="#contact"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('#contact');
-            }}
+            href={`https://wa.me/${personalInfo.whatsapp.replace(/\D/g, '')}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden md:inline-flex btn-primary text-sm"
           >
             Fale Comigo
@@ -115,11 +114,9 @@ const Header = () => {
             </a>
           ))}
           <a
-            href="#contact"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('#contact');
-            }}
+            href={`https://wa.me/${personalInfo.whatsapp.replace(/\D/g, '')}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-4 btn-primary text-center"
           >
             Fale Comigo

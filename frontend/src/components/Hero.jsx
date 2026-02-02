@@ -127,7 +127,7 @@ const Hero = () => {
                 <img
                   src={personalInfo.photo}
                   alt={personalInfo.name}
-                  className="w-full aspect-[4/5] object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
+                  className="w-full aspect-[4/5] object-cover object-top grayscale hover:grayscale-0 transition-all duration-700 animate-hero"
                 />
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>

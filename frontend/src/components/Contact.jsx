@@ -161,7 +161,7 @@ const Contact = () => {
                 <span className="text-white font-medium">Disponível para projetos</span>
               </div>
               <p className="text-gray-400 text-sm">
-                Atualmente aceitando novos projetos. Tempo médio de resposta: 2 horas.
+                Atualmente aceitando novos projetos. Tempo médio de resposta: 4 horas.
               </p>
             </div>
           </div>

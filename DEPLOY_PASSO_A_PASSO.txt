@@ -1,0 +1,134 @@
+═══════════════════════════════════════════════════════════════════
+  DEPLOY PORTFOLIO TIAGO - PASSO A PASSO COMPLETO
+═══════════════════════════════════════════════════════════════════
+
+PROBLEMA: Tela branca ao fazer upload no GitHub Pages
+
+SOLUÇÃO: Seu projeto precisa estar em 2 serviços diferentes:
+- Frontend (React) → GitHub Pages
+- Backend (FastAPI) → Render.com ou Railway.app
+
+═══════════════════════════════════════════════════════════════════
+PASSO 1: PREPARAR GITHUB
+═══════════════════════════════════════════════════════════════════
+
+1. Vá para https://github.com
+2. Crie um NOVO repositório chamado: seu-usuario.github.io
+   Exemplo: tiago.github.io (substitua "tiago" por seu usuário)
+3. Marque como "Public"
+4. NÃO adicione README
+
+═══════════════════════════════════════════════════════════════════
+PASSO 2: FAZER PUSH DO CÓDIGO LOCALMENTE
+═══════════════════════════════════════════════════════════════════
+
+Abra PowerShell na pasta do projeto e execute:
+
+cd "c:\Users\SallesN\Documents\Portifolio-Tiago"
+
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M main
+git remote add origin https://github.com/seu-usuario/seu-usuario.github.io.git
+git push -u origin main
+
+═══════════════════════════════════════════════════════════════════
+PASSO 3: CONFIGURAR BACKEND (Render.com)
+═══════════════════════════════════════════════════════════════════
+
+1. Vá para https://render.com
+2. Clique em "New +" → "Web Service"
+3. Selecione "Deploy from a Git repository"
+4. Conecte seu repositório GitHub
+5. Configure:
+   - Name: portfolio-api
+   - Environment: Python 3
+   - Build Command:
+     pip install -r backend/requirements.txt
+   - Start Command:
+     cd backend && uvicorn server:app --host 0.0.0.0 --port 8000
+   - Root Directory: (deixe em branco)
+
+6. Clique em "Create Web Service"
+7. Espere fazer o deploy (pode levar 5-10 min)
+8. Copie a URL gerada (ex: https://portfolio-api-xxxx.onrender.com)
+
+═══════════════════════════════════════════════════════════════════
+PASSO 4: CONFIGURAR FRONTEND
+═══════════════════════════════════════════════════════════════════
+
+Edite o arquivo: frontend/.env.production
+
+Adicione:
+REACT_APP_API_URL=https://portfolio-api-xxxx.onrender.com/api
+
+(Substitua a URL pela do seu backend no Render)
+
+═══════════════════════════════════════════════════════════════════
+PASSO 5: ATUALIZAR CORS DO BACKEND
+═══════════════════════════════════════════════════════════════════
+
+Abra: backend/server.py
+
+Procure por "allow_origins" e atualize para:
+
+allow_origins=[
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "https://seu-usuario.github.io",
+    "https://portfolio-api-xxxx.onrender.com",
+],
+
+═══════════════════════════════════════════════════════════════════
+PASSO 6: FAZER NOVO PUSH
+═══════════════════════════════════════════════════════════════════
+
+PowerShell:
+
+git add .
+git commit -m "Configure deployment"
+git push
+
+═══════════════════════════════════════════════════════════════════
+PASSO 7: AGUARDAR GITHUB ACTIONS
+═══════════════════════════════════════════════════════════════════
+
+1. Vá para seu repositório GitHub
+2. Clique em "Actions"
+3. Veja se o workflow "Deploy Frontend" está rodando
+4. Aguarde completar (verde ✓)
+
+═══════════════════════════════════════════════════════════════════
+PASSO 8: ACESSAR SEU SITE
+═══════════════════════════════════════════════════════════════════
+
+Após 2-5 minutos, acesse:
+https://seu-usuario.github.io
+
+Exemplo: https://tiago.github.io
+
+═══════════════════════════════════════════════════════════════════
+SE CONTINUAR TELA BRANCA - DEBUG
+═══════════════════════════════════════════════════════════════════
+
+1. Abra seu site
+2. Pressione F12 (DevTools)
+3. Vá em Console
+4. Veja se tem algum erro em vermelho
+5. Se tiver CORS error, verifique o backend
+6. Se tiver 404, verifique a URL da API no .env.production
+
+═══════════════════════════════════════════════════════════════════
+RESUMO RÁPIDO
+═══════════════════════════════════════════════════════════════════
+
+GitHub Pages → https://seu-usuario.github.io (seu site fica aqui)
+Backend API → https://seu-api-render.com (API fica aqui)
+
+Seu frontend (React) será buildo e enviado para GitHub Pages automaticamente.
+Seu backend (FastAPI) será rodado no Render.com.
+
+Tudo comunica via HTTPS com CORS configurado.
+
+═══════════════════════════════════════════════════════════════════

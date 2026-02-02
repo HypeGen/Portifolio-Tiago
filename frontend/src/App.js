@@ -30,7 +30,7 @@ const Home = () => {
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL || "/"}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/admin-tsg-2024" element={<AdminPanel />} />

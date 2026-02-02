@@ -9,7 +9,7 @@ export const personalInfo = {
   bio: "Desenvolvedor Web apaixonado por criar experiências digitais únicas. Especializado em Landing Pages de alta conversão e implementação de IA para otimizar projetos.",
   location: "Recife, PE - Brasil",
   whatsapp: "+5581984120292",
-  email: "tiago@example.com"
+  email: "monneysalles@gmail.com"
 };
 
 export const skills = [

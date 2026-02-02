@@ -85,13 +85,20 @@ const Services = () => {
                   {service.description}
                 </p>
 
-                {/* Learn More Link */}
-                <div className={`flex items-center gap-2 text-white/60 group-hover:text-white transition-colors duration-300`}>
+                {/* Learn More Link (scroll to contact) */}
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className={`flex items-center gap-2 text-white/60 group-hover:text-white transition-colors duration-300`}
+                >
                   <span className="text-sm font-medium">Saiba mais</span>
                   <ArrowRight className={`w-4 h-4 transition-transform duration-300 ${
                     hoveredService === index ? 'translate-x-1' : ''
                   }`} />
-                </div>
+                </a>
 
                 {/* Decorative Corner */}
                 <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden">

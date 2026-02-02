@@ -1,0 +1,81 @@
+═══════════════════════════════════════════════════════════════════════════
+                    RESUMO DO SETUP DE DEPLOY
+═══════════════════════════════════════════════════════════════════════════
+
+✅ ARQUIVOS CRIADOS/MODIFICADOS:
+
+1. ✔️ frontend/package.json
+   - Adicionado: "homepage" para GitHub Pages
+   - Adicionado: "gh-pages" dependency
+   - Adicionado: script "deploy"
+
+2. ✔️ frontend/src/App.js
+   - Atualizado: BrowserRouter com basename correto
+
+3. ✔️ frontend/src/config.js (NOVO)
+   - Exporta API_URL dinamicamente
+
+4. ✔️ frontend/.env.production (NOVO)
+   - Template para URL da API
+
+5. ✔️ frontend/public/404.html (NOVO)
+   - Permite routing funcionar no GitHub Pages
+
+6. ✔️ .github/workflows/deploy.yml (NOVO)
+   - Workflow automático do GitHub Actions
+
+7. ✔️ COMECE_AQUI.md (NOVO)
+   - Guia rápido 3 passos
+
+8. ✔️ DEPLOY_PASSO_A_PASSO.txt (NOVO)
+   - Instruções detalhadas em português
+
+9. ✔️ DEPLOY_GUIDE.md (NOVO)
+   - Troubleshooting e dicas
+
+10. ✔️ ENV_GUIDE.md (NOVO)
+    - Guia de variáveis de ambiente
+
+11. ✔️ test-deploy.bat (NOVO)
+    - Script para testar em Windows
+
+═══════════════════════════════════════════════════════════════════════════
+
+🎯 PRÓXIMOS PASSOS (em ordem):
+
+1️⃣  Abra COMECE_AQUI.md e siga os 3 passos
+2️⃣  Crie repositório seu-usuario.github.io no GitHub
+3️⃣  Faça git push (GitHub Actions vai fazer deploy automático)
+4️⃣  Suba backend no Render.com ou Railway
+5️⃣  Atualize frontend/.env.production com URL do backend
+6️⃣  Novo commit e push
+7️⃣  Site estará em https://seu-usuario.github.io
+
+═══════════════════════════════════════════════════════════════════════════
+
+❓ DÚVIDAS FREQUENTES:
+
+P: Por que tela branca?
+R: Falta de API_URL configurado ou backend não acessível
+
+P: Como testar localmente?
+R: Execute test-deploy.bat (Windows) ou npm start
+
+P: Deploy falha no GitHub Actions?
+R: Abra GitHub → repo → Actions e veja o log de erro
+
+P: Posso usar meu próprio domínio?
+R: Sim! Edite .github/workflows/deploy.yml linha "cname"
+
+═══════════════════════════════════════════════════════════════════════════
+
+📞 SUPORTE:
+
+Arquivo                    Quando usar
+─────────────────────────────────────────
+COMECE_AQUI.md            Começar agora (3 passos)
+DEPLOY_PASSO_A_PASSO.txt  Detalhado em português
+DEPLOY_GUIDE.md           Troubleshooting
+ENV_GUIDE.md              Variáveis de ambiente
+
+═══════════════════════════════════════════════════════════════════════════
