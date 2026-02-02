@@ -49,7 +49,7 @@ const Header = () => {
             }}
             className="font-display font-bold text-2xl text-white hover:opacity-80 transition-opacity"
           >
-            <span className="text-gray-500">TSG.</span>
+            TSG<span className="text-gray-500">.</span>
           </a>
 
           {/* Desktop Navigation */}
