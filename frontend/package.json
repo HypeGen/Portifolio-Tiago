@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://{seu-usuario}.github.io",
+  "homepage": "https://hypegen.github.io/Portifolio-Tiago",
 
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
