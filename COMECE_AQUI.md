@@ -14,25 +14,23 @@
 
 ## 🎯 COMECE AQUI - 3 PASSOS RÁPIDOS:
 
-### **PASSO 1: Criar repositório no GitHub** (2 min)
+### **PASSO 1: Repositório já criado** ✅
 
-1. Abra https://github.com/new
-2. Nome do repo: `seu-usuario.github.io` (substitua seu-usuario pelo seu user)
-3. Marque como **Public**
-4. Clique em "Create repository"
-5. Copie a URL (tipo: `https://github.com/seu-usuario/seu-usuario.github.io.git`)
+Seu repositório já existe em:
+```
+https://github.com/HypeGen/Portifolio-Tiago
+```
 
-### **PASSO 2: Fazer push do código** (1 min)
+O código foi feito push com sucesso!
 
-Abra PowerShell na pasta do projeto e execute:
+### **PASSO 2: Código já está no GitHub** ✅
 
-```powershell
-git init
-git add .
-git commit -m "Deploy portfolio"
-git branch -M main
-git remote add origin [https://github.com/HypeGen/Deploy-portfolio.git]
-git push -u origin main
+O push foi feito com sucesso!
+
+```
+Seu repositório: https://github.com/HypeGen/Portifolio-Tiago
+Branch: main
+Status: ✓ Up to date
 ```
 
 ### **PASSO 3: Deploy do Backend** (5-10 min)
@@ -85,9 +83,10 @@ git push
 Seu site estará em: **https://seu-usuario.github.io**
 
 Exemplo: https://tiago.github.io
+á sendo construído! Acesse:
+**https://hypegen.github.io/Portifolio-Tiago/**
 
----
-
+> Nota: O GitHub Actions está compilando o frontend automaticamente a cada push
 ## 🧪 Testar Localmente (Opcional)
 
 ```powershell
